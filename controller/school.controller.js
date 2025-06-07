@@ -10,12 +10,11 @@ export const signup = async (req, res)=>{
     }
     catch(err)
     {
-        console.log(err)
         res.status(500).json({message: err.message})
     }
 }
 
-export const login = async (req, res)=>{
+export const login = async(req, res)=>{
     try {
         const email = req.body?.email
         const password = req.body?.password
