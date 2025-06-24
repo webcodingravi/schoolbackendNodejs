@@ -17,10 +17,10 @@ try{
   let admission = []
   const session = req.query.session
   if(session) {
-   admission =  await StudentModel.find({school: req.school_id}).sort({created_At: -1})
+   admission =  await StudentModel.find({school: req.school._id}).sort({created_At: -1})
   }
   else{
- admission = await StudentModel.find({school: req.school_id}).sort({created_At: -1})
+ admission = await StudentModel.find({school: req.school._id}).sort({created_At: -1})
   }
  
   res.json(admission)

@@ -7,6 +7,6 @@ const ClassRouter = Router();
 ClassRouter.post("/",AuthMiddleware,createClass)
 ClassRouter.get("/",AuthMiddleware,fetchClass)
 ClassRouter.put("/:id",AuthMiddleware,updateClass)
-ClassRouter.post("/:id",AuthMiddleware,deleteClass)
+ClassRouter.delete("/:id",AuthMiddleware,deleteClass)
 
 export default ClassRouter;

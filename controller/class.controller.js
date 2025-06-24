@@ -38,7 +38,7 @@ export const createClass = async(req,res) =>{
 }
 
 
-    export const deleteClass = async(req,res) =>{
+    export const deleteClass = async (req,res) =>{
     try{
           const classes = await ClassModel.findByIdAndDelete(req.params.id)
           if(!classes)

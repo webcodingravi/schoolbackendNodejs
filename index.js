@@ -16,6 +16,8 @@ import TeacherRouter from './router/teacher.router.js'
 import ClassRouter from './router/class.router.js'
 import TokenRouter from './router/token.router.js'
 import StudentRouter from './router/student.router.js'
+import ExpenseRouter from './router/expense.route.js'
+import EmployeeRouter from './router/employee.router.js'
 
 const app = express()
 app.listen(8080, ()=>console.log("App is running on 8080"))
@@ -30,3 +32,5 @@ app.use("/teacher", TeacherRouter)
 app.use("/class",ClassRouter)
 app.use("/token",TokenRouter)
 app.use("/student",StudentRouter)
+app.use("/expense",ExpenseRouter)
+app.use("/employee",EmployeeRouter)
