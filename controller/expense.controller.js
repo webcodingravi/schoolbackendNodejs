@@ -23,10 +23,10 @@ export const fetchExpense = async(req,res) => {
     }
 }
 
-export const updateExpense = (req,res) => {
+export const updateExpense = async(req,res) => {
        try{
 
-        const expense = ExpenseModel.findByIdAndUpdate(req.parms.id, req.body, {new:true})
+        const expense = await ExpenseModel.findByIdAndUpdate(req.parms.id, req.body, {new:true})
         res.json(expense)
        }
        catch(err) {
@@ -35,14 +35,16 @@ export const updateExpense = (req,res) => {
 }
 
 
-export const deleteExpense = (req,res) => {
+export const deleteExpense = async(req,res) => {
        try{
-
-        const expense = ExpenseModel.findByIdAndDelete(req.parms.id, req.body, {new:true})
-        res.json(expense)
+        const expense = await ExpenseModel.findByIdAndDelete(req.params.id)
+        if(!expense) 
+            return res.status(404).json({message: "Expense not found with id value"})
+           res.json(expense)
+    
        }
        catch(err) {
-            res.status(500).json({message:err.message})
+             res.status(500).json({message:err.message})
        }
 }
 
