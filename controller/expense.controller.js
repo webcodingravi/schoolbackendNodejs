@@ -27,7 +27,9 @@ export const updateExpense = async(req,res) => {
        try{
 
         const expense = await ExpenseModel.findByIdAndUpdate(req.parms.id, req.body, {new:true})
-        res.json(expense)
+           if(!expense) 
+            return res.status(404).json({message: "Expense not found with id value"})
+            res.json(expense)
        }
        catch(err) {
             res.status(500).json({message:err.message})

@@ -26,7 +26,7 @@ const schoolSchema = new Schema({
 
     tagline: { type: String },
 
-    estd: { type: Number },
+    estd: { type: Date },
 
     regNo: { type: String },
     

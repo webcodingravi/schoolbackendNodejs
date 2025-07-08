@@ -33,10 +33,10 @@ try{
 export const updateStudents = async(req, res) => {
    try{
         const admission = await StudentModel.findByIdAndUpdate(req.params.id,req.body,{new:true})
-        if(!admission) {
+        if(!admission) 
           return res.status(404).json({message: 'Student not found with id value'})
           res.json(admission)
-        }
+        
    }catch(err) {
     res.status(500).json({meassage:err.message})
    }
