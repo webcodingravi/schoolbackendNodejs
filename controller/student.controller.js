@@ -1,4 +1,5 @@
 import StudentModel from "../model/student.model.js"
+import path from 'path'
 
 export const admission = async(req, res)=> {
 try{
@@ -46,13 +47,14 @@ export const updateStudents = async(req, res) => {
 export const deleteStudents = async(req, res) => {
    try{
         const admission = await StudentModel.findByIdAndDelete(req.params.id)
-        if(!admission) {
+        if(!admission) 
           return res.status(404).json({message: 'Student not found with id value'})
           res.json(admission)
-        }
+        
    }catch(err) {
     res.status(500).json({meassage:err.message})
    }
 }
+
 
 

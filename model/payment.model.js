@@ -3,12 +3,12 @@ import mongoose,{Schema,model} from "mongoose"
 const paymentSchema = new Schema({
     school: {
         type: mongoose.Types.ObjectId,
-        ref:"school",
+        ref:"School",
         required: true
     },
     student: {
         type:mongoose.Types.ObjectId,
-        ref:"student",
+        ref:"Student",
         required:true
     },
     fee : {

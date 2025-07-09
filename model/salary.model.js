@@ -1,27 +1,27 @@
 import mongoose, {Schema,model} from "mongoose"
 
-const salerySchema = new Schema({
+const salarySchema = new Schema({
     school :{
       type: mongoose.Types.ObjectId,
       required:true,
-      ref:"school"
+      ref:"School"
     },
-    employee: {
+    employeeName: {
         type:String,
         required:true
     },
-    salery: {
+    salary: {
         type:Number,
         required:true
     },
     description: {
         type:String
     },
-    saleryDate: {
+    salaryDate: {
         type:Date,
         required:true,
     }
 },{timestamps: true})
 
-const SaleryModel = model("Salery",salerySchema)
-export default SaleryModel
+const SalaryModel = model("Salary",salarySchema)
+export default SalaryModel

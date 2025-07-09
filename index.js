@@ -18,7 +18,7 @@ import TokenRouter from './router/token.router.js'
 import StudentRouter from './router/student.router.js'
 import ExpenseRouter from './router/expense.route.js'
 import EmployeeRouter from './router/employee.router.js'
-import SaleryRouter from './router/salery.router.js'
+import SalaryRouter from './router/salary.router.js'
 import PaymentRoutes from './router/payment.route.js'
 
 const app = express()
@@ -36,5 +36,5 @@ app.use("/token",TokenRouter)
 app.use("/student",StudentRouter)
 app.use("/expense",ExpenseRouter)
 app.use("/employee",EmployeeRouter)
-app.use("/salery",SaleryRouter)
+app.use("/salary",SalaryRouter)
 app.use("/payment",PaymentRoutes)

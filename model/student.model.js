@@ -76,7 +76,8 @@ const studentSchema = new Schema({
     },
     roll: {
         type:Number
-    }
+    },
+    image: { type: String }
 
 
 },{timestamps:true})

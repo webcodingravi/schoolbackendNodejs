@@ -15,7 +15,7 @@ export const createPayment = async(req,res) => {
 export const fecthPayment = async(req,res) => {
     try{
         const schoolId = req.school._id
-       const payment = await PaymentModel.find({school: schoolId}).sort({createdAt:-1})
+       const payment = await PaymentModel.find({school: schoolId}).sort({createdAt:-1}).populate('student');
        res.json(payment)
     }
     catch(err) {
@@ -38,6 +38,8 @@ export const updatePayment = async(req,res) => {
 export const deletePayment = async(req,res) => {
     try{
         const payment = PaymentModel.findByIdAndDelete(req.parms._id)
+        if(!payment)
+        return res.status(404).json({message:"payment not found"})
         res.json(payment)
 
     }
