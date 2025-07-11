@@ -6,7 +6,7 @@ const TeacherRouter = Router()
 
 const storage = multer.diskStorage({
     destination: (req, res, cb)=>{
-        cb(null, "storage/teacher")
+        cb(null, "storage/teacher/")
     },
     filename: (req, file, cb)=>{
         cb(null, `${Date.now()}.png`)
